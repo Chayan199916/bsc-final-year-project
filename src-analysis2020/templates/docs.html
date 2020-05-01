@@ -1,0 +1,793 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style4.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/dark.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"
+    integrity="sha256-eBPyH/yKtanEgIozyunmI0tKs7FCRaiQC91ih5ZCB3w=" crossorigin="anonymous"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/product/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+  <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+  <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#563d7c">
+
+  <style>
+    footer a {
+      color: #fff;
+    }
+
+    footer a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer p {
+      color: #fff;
+    }
+
+    .ml11 {
+      font-weight: 500;
+      font-size: 2.5em;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+      color: #fff;
+      background-color: inherit;
+    }
+
+    .ml11 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.1em;
+      padding-right: 0.05em;
+      padding-bottom: 0.15em;
+    }
+
+    .ml11 .line {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: #fff;
+      transform-origin: 0 50%;
+    }
+
+    .ml11 .line1 {
+      top: 0;
+      left: 0;
+    }
+
+    .ml11 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+
+    .customize {
+      color: white;
+      padding: 10px;
+    }
+
+    .social-link a i {
+      transition: 0.8s;
+    }
+
+    .social-link a i:hover {
+      transform: rotateY(360deg);
+
+    }
+
+    /*img{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 20px 0 rgba(37, 43, 54,0.6);
+                height: 70px;
+                border-radius: 50%;
+                transition: 0.8s;
+                margin-bottom: 3px;
+              }
+              img:hover{
+                transform: rotateY(360deg);
+              }*/
+    .navi-bar h4 {
+      letter-spacing: 0.2rem;
+      margin-top: 5px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+
+    }
+
+    .logo-img {
+      margin: 0 auto;
+    }
+
+    .desc {
+      font-family: "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+    }
+
+    #footer-bg {
+      background-color: #333;
+      color: rgba(255, 255, 255, 0.75);
+      background-attachment:
+        /*fixed,*/
+        fixed;
+      background-image:
+        /*url(./static/images/overlay1.png),*/
+        url(./static/images/header.jpg);
+      background-size: cover;
+    }
+
+    .content {
+      text-align: left;
+      padding: 20px 0 20px 0;
+
+    }
+
+    .content p {
+      font-family: "Alegreya";
+      font-size: 1.3rem;
+      text-align: justify;
+      letter-spacing: 0.2rem;
+    }
+
+    .content h4,
+    h5 {
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.1rem;
+      border-bottom: 1px solid rgba(20, 20, 20, 0.7);
+      width: 50%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  </style>
+  <script>
+    function callme() {
+      document.querySelector("#spec").classList.remove("active");
+    }
+
+  </script>
+  <title>SRC ANALYSIS - BSC COMPUTER SCIENCE FINAL YEAR PROJECT</title>
+</head>
+
+<body onload="callme();">
+  <div class="header" id="topheader">
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container text-uppercase p-2">
+        <a class="navbar-brand font-weight-bold text-white" href="#">
+          <div class="navi-bar">
+            <h4 onclick="window.open( 'index', '_self' );">SRC ANALYSIS </h4>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Documentation<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/prediction">Prediction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/plots">Plots</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <section class="header-section">
+      <div class="center-div">
+        <h1 class="ml11 font-weight-bold">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">For a Breath of Fresh Air</span>
+          </span>
+        </h1>
+        <p class="desc">
+          We analyze and predict the ambient air quality standards with the help of AQI using machine learning
+          algorithms.
+        </p>
+        <div class="social-link">
+          <a href="#" target="_/"><i class="fa-3x fa fa-facebook-official customize" aria-hidden="true"></i></a>
+          <a href="https://github.com/Reshav-Paul/Air-Quality-Prediction" target="_/"><i
+              class="fa-3x fa fa-github-square customize" aria-hidden="true"></i></a>
+          <a href="#" target="_/"><i class="fa-3x fa fa-twitter-square customize" aria-hidden="true"></i></a>
+          <a href="#" target="_/"><i class="fa-3x fa fa-instagram customize" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- *******************************Three extra div starts********************************** -->
+
+  <section class="header-extradiv">
+    <div class="container">
+      <div class="row">
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-desktop" aria-hidden="true"></i></a>
+          <h2>EASY TO PREDICT</h2>
+          <p style="text-align: center">
+            Accurate prediction facilities from both supplied and automatically fetched data.
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-magic" aria-hidden="true"></i></a>
+          <h2>EASY TO EXPLORE</h2>
+          <p style="text-align: center;">
+            Easy navigation and wide range of availabilities with interactive experience
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-eye" aria-hidden="true"></i></a>
+          <h2>EASY TO VISUALISE</h2>
+          <p style="text-align: center;">
+            Attractive visualisation of ML performance with the help of different plots
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- *******************************Three extra div ends********************************** -->
+
+  <div class="container">
+    <nav id="navbar-example2" class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand text-white text-uppercase" href="#"><strong>Documentation</strong></a>
+      <ul class="nav nav-pills mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#intro">INTRODUCTION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#meth">METHODOLOGY</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false">MODELS</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item bg-dark" href="#multi">Multivariable linear regression</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item bg-dark" href="#poly">Polynomial regression</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item bg-dark" href="#svr">Support vector regression</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item bg-dark" href="#forest">Random forest</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item bg-dark" href="#mlp">Multi layer perceptron neural network</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item bg-dark" href="#lstm">LSTM neural network</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item bg-dark" href="#gru">GRU nwural network</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item bg-dark" href="#wide">Wide deep neural network</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#eval">MATRICES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#result" id="spec">RESULT</a>
+        </li>
+      </ul>
+    </nav>
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+      <div class="content">
+        <h4 id="intro">Introduction</h4>
+        <p>Air pollution is one of the primary problems that were born out of industrialization and
+          modernization. With the rapid growth of urbanization and industrialization, many cities are
+          suffering from heavy air pollution. Kolkata, one of the major metropolitan cities in India, has
+          been suffering from this issue for over a decade. The problem of falling air quality especially
+          during the winter season has intensified over the last few years and hence an analysis of the
+          problem and implementation of proper prediction systems has gained great importance at this
+          time for the protection of people and the improvement of the air quality in Kolkata.</p>
+      </div>
+      <div class="content">
+        <h4 id="meth">Methodology</h4>
+        <p>
+          Air quality is measured with the help of AQI (Air Quality Index). Depending on this value of
+          AQI the air quality can be classified as hazardous, unhealthy, good etc. AQI is calculated on a
+          daily basis taking the maximum value from the sub index values of each air pollutant calculated
+          independently. Depending on the data availability we have chosen three air quality parameters
+          (PM<sub>10</sub> , NO<sub>2</sub> , SO<sub>2</sub>) and six meteorological parameters (Air temperature,
+          Pressure station level,Relative humidity, Horizontal visibility, Dew point temperature, Mean Wind Speed).We
+          have
+          implemented different machine learning algorithms to comparatively study the trends in each of
+          the air quality parameters and have taken the final models for each parameter based on their
+          optimum performances. The meteorological parameters are our input/independent variables and
+          air quality parameters are our output/dependent variables. As we are dealing with continuous
+          data, our problem is regression problem. The algorithms we have implemented include
+          multivariable linear regression, polynomial regression, support vector regression, decision tree,
+          random forest and neural network models like LSTM, GRU, MLP and wide deep MLP. The
+          models which have performed well are support vector regression, random forest and neural
+          network models. We have chosen four metrics to evaluate our models which are mean absolute
+          error, mean squared error, root mean squared error and r2 score. We have also calculated the
+          accuracy of a model by finding out the percentage of predictions having less than 20% error from
+          a series of predictions on the test data. To get better accuracy we have introduced some artificial
+          parameters like Day no. (1-365 or 366), previous day’s parameter values etc.
+          Correlation matrix was used to get the better understanding of AQI and its dependency on air
+          quality parameters. Examining different plots and the correlation matrix, we have found that AQI
+          value is most heavily affected by PM<sub>10</sub>, followed by NO<sub>2</sub> and then SO<sub>2</sub>. We have
+          examined the air quality trends from the plots to arrive at some predictive conclusions like which parameter
+          will have less impact in near future etc.
+        </p>
+      </div>
+      <div class="content">
+
+        <h4>Dataset splitting</h4>
+        <p>
+          The entire dataset contains 2372 records and the ratio of splitting the entire dataset into training and
+          testing set has been taken as 4:1.As we are dealing with time series data and our prediction on a particular
+          day depends on the result of previous day, dataset has been split into two sequential blocks instead of random
+          splitting.
+        </p>
+        <script src="https://gist.github.com/Chayan199916/a5581c68ca4564c55ab59c1349d9f40a.js"></script>
+        <h5>MODELS</h5>
+        <h4 id="multi">Multivariable linear regression</h4>
+        <p>
+          The goal of multiple linear regression (MLR) is to model the linear relationship between the independent
+          variables and dependent variable. MLR examines how multiple independent variables are related to one dependent
+          variable. In our case independent variables are Air Temperature, Pressure Station Level, Relative Humidity etc
+          and dependent variables are PM<sub>10</sub> NO<sub>2</sub> and SO<sub>2</sub>.
+        </p>
+        <script src="https://gist.github.com/Chayan199916/fc1762a29679a068785dfc8ad93d24be.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="poly">Polynomial regression</h4>
+        <p>Polynomial Regression is a form of linear regression in which the relationship between the independent
+          variable x and dependent variable y is modeled as an nth degree polynomial. Polynomial regression fits a
+          nonlinear relationship between the value of x and the corresponding conditional mean of y.</p>
+        <script src="https://gist.github.com/Chayan199916/154f1e399a582680a191c1776108cbce.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="svr">Support vector regression</h4>
+        <p>The Support Vector Regression (SVR) uses the same principles as the SVM for classification, with only a few
+          minor differences. First of all, because output is a real number it becomes very difficult to predict the
+          information at hand, which has infinite possibilities. In the case of regression, a margin of tolerance
+          (epsilon) is set in approximation to the SVM which would have already requested from the problem. But besides
+          this fact, there is also a more complicated reason, the algorithm is more complicated therefore to be taken in
+          consideration. However, the main idea is always the same: to minimize error, individualizing the hyperplane
+          which maximizes the margin, keeping in mind that part of the error is tolerated. </p>
+        <script src="https://gist.github.com/Chayan199916/a147052d645005678dc416fdfd4ee4f4.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="forest">Random forest</h4>
+        <p>The random forest is a model made up of many decision trees.When training, each tree in a random forest
+          learns from a random sample of the data points.The idea is that by training each tree on different samples,
+          although each tree might have high variance with respect to a particular set of the training data, overall,
+          the entire forest will have lower variance but not at the cost of increasing the bias.</p>
+        <script src="https://gist.github.com/Chayan199916/2f93422b57363b953ff599127bfa9ed3.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="mlp">Multi layer perceptron neural network</h4>
+        <p>A perceptron is a network with two layers, one input and one output. Artificial neural network, which has
+          input layer, output layer, and two or more hidden layers is called multilayer perceptron or MLP.It is a class
+          of feedforward artificial neural network (ANN). MLP utilizes backpropagation for training and learns and
+          updates weights for improvements.</p>
+        <script src="https://gist.github.com/Chayan199916/d110fe8e79c87828265e4ff97e0a3dd6.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="lstm">LSTM neural network</h4>
+        <p>LSTM was initially proposed for language models and
+          was well-known for its excellent ability to memorize
+          long-term dependencies. However, due to its complex
+          structure, the solution to LSTM NNs usually takes long time.The LSTM mitigates vanishing gradient problem via
+          input, forget, and output gates; the input gate regulates how much of the new cell state to keep, the forget
+          gate regulates how much of the existing memory to forget, and the output gate regulates how much of the cell
+          state should be exposed to the next layers of the network.</p>
+        <script src="https://gist.github.com/Chayan199916/093997a5bb4d7540770943dae81d8051.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="gru">GRU neural network</h4>
+        <p>The GRU operates using a reset gate and an update gate. The reset gate sits between the previous activation
+          and the next candidate activation to forget previous state, and the update gate decides how much of the
+          candidate activation to use in updating the cell state.</p>
+        <script src="https://gist.github.com/Chayan199916/66fb67d59e62e6bad851084accf90788.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="wide">Wide deep neural network</h4>
+        <p>Training a wide linear model (for memorization) alongside a deep neural network (for generalization), one can
+          combine the strengths of both. It's called Wide & Deep Learning. </p>
+        <script src="https://gist.github.com/Chayan199916/9fd63c06133dbbb63c9ea3ac65954fcd.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="eval">Evaluation matrices</h4>
+        <p>Errors in machine learning models help to choose better model among different models.It reflects
+          effectiveness of an individual model over others.We have chosen three main matrices to evaluate our models. a)
+          Mean Absolute Error(MAE) b) Mean Squared Error(MSE) c) Root Mean Squared Error(RMSE). Except these, We have
+          also used d) R<sup>2</sup> score and e) Accuracy(This one we have defined on our own considering only those
+          predictions which have less than 20% error)</p>
+        <script src="https://gist.github.com/Chayan199916/ad2ff92da988b202e5b5695f832ef748.js"></script>
+      </div>
+      <div class="content">
+        <h4 id="result">Test Result</h4>
+        <h4>PM<sub>10</sub></h4>
+        <table bgcolor="#ddd" cellspacing="0" cellpadding="7">
+          <thead>
+            <tr>
+              <th>Model names</th>
+              <th>Mean Absolute Error</th>
+              <th>Mean Squared Error</th>
+              <th>Root Mean Squared Error</th>
+              <th>R2 Score</th>
+              <th>Accuracy(<20% error)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Multi-variable linear regression</td>
+              <td>16.528</td>
+              <td>511.257</td>
+              <td>22.611</td>
+              <td>0.914</td>
+              <td>65.61%</td>
+            </tr>
+            <tr>
+              <td>Polynomial Regression</td>
+              <td>14.276</td>
+              <td>369.562</td>
+              <td>19.224</td>
+              <td>0.938</td>
+              <td>72.15%</td>
+            </tr>
+            <tr>
+              <td>Support vector regression</td>
+              <td>15.473</td>
+              <td>475.763</td>
+              <td>21.812</td>
+              <td>0.92</td>
+              <td>75.1%</td>
+            </tr>
+            <tr>
+              <td>Random forest regression</td>
+              <td>15.805</td>
+              <td>490.259</td>
+              <td>22.142</td>
+              <td>0.9176</td>
+              <td>72.99%</td>
+            </tr>
+            <tr>
+              <td>Multi layer perceptron</td>
+              <td>13.446</td>
+              <td>376.514</td>
+              <td>19.404</td>
+              <td>0.9367</td>
+              <td>74.73%</td>
+            </tr>
+            <tr>
+              <td>Wide deep MLP</td>
+              <td>14.474</td>
+              <td>384.695</td>
+              <td>19.614</td>
+              <td>0.9356</td>
+              <td>73.46%</td>
+            </tr>
+            <tr>
+              <td>LSTM</td>
+              <td>14.769</td>
+              <td>386.02</td>
+              <td>19.647</td>
+              <td>0.9354</td>
+              <td>72.19%</td>
+            </tr>
+            <tr>
+              <td>GRU</td>
+              <td>14.57</td>
+              <td>382.971</td>
+              <td>19.57</td>
+              <td>0.9359</td>
+              <td>73.67%</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <h4>NO<sub>2</sub></h4>
+        <table bgcolor="#ddd" cellspacing="0" cellpadding="5">
+          <thead>
+            <tr>
+              <th>Model names</th>
+              <th>Mean Absolute Error</th>
+              <th>Mean Squared Error</th>
+              <th>Root Mean Squared Error</th>
+              <th>R2 Score</th>
+              <th>Accuracy(<20% error)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Multi-variable linear regression</td>
+              <td>4.472</td>
+              <td>34.621</td>
+              <td>5.884</td>
+              <td>0.862</td>
+              <td>84.81%</td>
+            </tr>
+            <tr>
+              <td>Polynomial Regression</td>
+              <td>4.104</td>
+              <td>31.364</td>
+              <td>5.6</td>
+              <td>0.875</td>
+              <td>89.87%</td>
+            </tr>
+            <tr>
+              <td>Support vector regression</td>
+              <td>4.143</td>
+              <td>31.427</td>
+              <td>5.606</td>
+              <td>0.874</td>
+              <td>89.03%</td>
+            </tr>
+            <tr>
+              <td>Random forest regression</td>
+              <td>4.301</td>
+              <td>35.772</td>
+              <td>5.981</td>
+              <td>0.857</td>
+              <td>88.39%</td>
+            </tr>
+            <tr>
+              <td>Multi layer perceptron</td>
+              <td>4.009</td>
+              <td>29.612</td>
+              <td>5.442</td>
+              <td>0.883</td>
+              <td>88.74%</td>
+            </tr>
+            <tr>
+              <td>Wide deep MLP</td>
+              <td>4.097</td>
+              <td>30.469</td>
+              <td>5.519</td>
+              <td>0.879</td>
+              <td>88.95%</td>
+            </tr>
+            <tr>
+              <td>LSTM</td>
+              <td>4.001</td>
+              <td>31.039</td>
+              <td>5.571</td>
+              <td>0.877</td>
+              <td>90.87%</td>
+            </tr>
+            <tr>
+              <td>GRU</td>
+              <td>4.023</td>
+              <td>30.381</td>
+              <td>5.512</td>
+              <td>0.88</td>
+              <td>90.02%</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <h4>SO<sub>2</sub></h4>
+        <table bgcolor="#ddd" cellspacing="0" cellpadding="5">
+          <thead>
+            <tr>
+              <th>Model names</th>
+              <th>Mean Absolute Error</th>
+              <th>Mean Squared Error</th>
+              <th>Root Mean Squared Error</th>
+              <th>R2 Score</th>
+              <th>Accuracy(<20% error)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Multi-variable linear regression</td>
+              <td>1.299</td>
+              <td>2.608</td>
+              <td>1.615</td>
+              <td>0.775</td>
+              <td>49.58%</td>
+            </tr>
+            <tr>
+              <td>Polynomial Regression</td>
+              <td>1.174</td>
+              <td>2.602</td>
+              <td>1.613</td>
+              <td>0.776</td>
+              <td>60.55%</td>
+            </tr>
+            <tr>
+              <td>Support vector regression</td>
+              <td>1.102</td>
+              <td>2.262</td>
+              <td>1.504</td>
+              <td>0.805</td>
+              <td>59.49%</td>
+            </tr>
+            <tr>
+              <td>Random forest regression</td>
+              <td>1.365</td>
+              <td>3.361</td>
+              <td>1.833</td>
+              <td>0.71</td>
+              <td>52.11%</td>
+            </tr>
+            <tr>
+              <td>Multi layer perceptron</td>
+              <td>1.196</td>
+              <td>2.527</td>
+              <td>1.589</td>
+              <td>0.784</td>
+              <td>56.26%</td>
+            </tr>
+            <tr>
+              <td>Wide deep MLP</td>
+              <td>1.226</td>
+              <td>2.67</td>
+              <td>1.621</td>
+              <td>0.775</td>
+              <td>55.2%</td>
+            </tr>
+            <tr>
+              <td>LSTM</td>
+              <td>1.191</td>
+              <td>2.489</td>
+              <td>1.578</td>
+              <td>0.787</td>
+              <td>57.32%</td>
+            </tr>
+            <tr>
+              <td>GRU</td>
+              <td>1.171</td>
+              <td>2.466</td>
+              <td>1.57</td>
+              <td>0.789</td>
+              <td>54.99%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <!-- Footer -->
+
+  <footer class="bg-dark text-white">
+    <div class="container-fluid p-4">
+      <div class="row">
+        <div class="col-lg-3 pb-2">
+          <h4>
+            About Us
+          </h4>
+          <p>
+            We are CS UG Students <br> from St. Xavier's College, Kolkata.
+          </p>
+        </div>
+        <div class="col-lg-3 pb-2">
+          <h4>
+            Important links
+          </h4>
+          <ul class="list-unstyled">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/prediction">Prediction</a></li>
+            <li><a href="/plots">Plots</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 pb-2">
+          <h4>Contact Us</h4>
+          <p>
+            <address>
+              St. Xavier's College, 30, Mother Teresa Sarani, Kolkata, PO: Park Street.
+            </address>
+            <strong>Email : </strong><a href="mailto:swapnomoy199916@gmail.com">swapnomoy199916@gmail.com</a>
+          </p>
+        </div>
+        <div class="col-lg-3 pb-2 ">
+          <h4>
+            Information Updates
+          </h4>
+          <p>
+            Enter your email address below :
+          </p>
+          <form action="">
+            <div class="input-group">
+              <input type="email" name="" id="" class="form-control">
+              <div class="input-group-append">
+                <button class="btn btn-secondary">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center bg-secondary py-2">
+      &copy; 2020. All rights are reserved.
+    </div>
+  </footer>
+
+  <!-- Footer ends -->
+
+
+  <script type="text/javascript">
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml11 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700
+      })
+      .add({
+        targets: '.ml11 .line',
+        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+        easing: "easeOutExpo",
+        duration: 700,
+        delay: 100
+      }).add({
+        targets: '.ml11 .letter',
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=775',
+        delay: (el, i) => 34 * (i + 1)
+      }).add({
+        targets: '.ml11',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

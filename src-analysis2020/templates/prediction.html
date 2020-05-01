@@ -1,0 +1,890 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style5.css' %}">
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"
+    integrity="sha256-eBPyH/yKtanEgIozyunmI0tKs7FCRaiQC91ih5ZCB3w=" crossorigin="anonymous"></script>
+  <style>
+    #footer-bg {
+      background-color: #333;
+      color: rgba(255, 255, 255, 0.75);
+      background-attachment:
+        /*fixed,*/
+        fixed;
+      background-image:
+        /*url(./static/images/overlay1.png),*/
+        url(./static/images/header.jpg);
+      background-size: cover;
+    }
+
+    footer a {
+      color: #fff;
+    }
+
+    footer a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer p {
+      color: #fff;
+    }
+
+    .ml11 {
+      font-weight: 500;
+      font-size: 2.5em;
+    }
+
+    .ml11 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.1em;
+      padding-right: 0.05em;
+      padding-bottom: 0.15em;
+    }
+
+    .ml11 .line {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: #fff;
+      transform-origin: 0 50%;
+    }
+
+    .ml11 .line1 {
+      top: 0;
+      left: 0;
+    }
+
+    .ml11 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+
+    hr.style-five {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    hr.style-seven {
+      border: 0;
+      height: 1px;
+      background: #333;
+      background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .visible {
+      margin: 0 auto;
+      width: 60%;
+
+    }
+
+    .customize {
+      color: white;
+      padding: 10px;
+    }
+
+    .social-link a i {
+      transition: 0.8s;
+    }
+
+    .social-link a i:hover {
+      transform: rotateY(360deg);
+
+    }
+
+    .inactive {
+      opacity: 0.2;
+    }
+
+    .loading {
+      width: 100%;
+      height: 100vh;
+      background: url('./static/images/loader.gif') no-repeat;
+      cursor: wait;
+      top: 70%;
+      left: -50%;
+    }
+
+    /*img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 0 rgba(37, 43, 54,0.6);
+  height: 70px;
+  border-radius: 50%;
+  transition: 0.8s;
+  margin-bottom: 3px;
+}
+img:hover{
+  transform: rotateY(360deg);
+}*/
+    .navi-bar h4 {
+      letter-spacing: 0.2rem;
+      margin-top: 5px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+
+    }
+
+    input {
+      border: 1px solid #eee;
+      padding: 10px 10px;
+      width: 290px;
+
+      font-size: 15px;
+      resize: none;
+      margin: 10px 0;
+      border-radius: 5px;
+      color: #777;
+    }
+
+    input:focus {
+      background-color: #ecf3fa;
+      outline-style: none;
+    }
+
+    .logo-img {
+      margin: 0 auto;
+    }
+
+    #loader {
+      width: 100%;
+
+      cursor: wait;
+      /*display: flex;
+   justify-content: center;
+   align-items: center;*/
+    }
+
+    img {
+      width: 40%;
+      height: 350px;
+    }
+
+    .desc {
+      font-family: "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+    }
+  </style>
+  <script type="text/javascript">
+    function show1() {
+      document.getElementById('div1').style.display = "block";
+      document.getElementById('div1').classList.add("visible");
+      document.getElementById('div2').style.display = "none";
+      document.getElementById('div2').classList.remove("visible");
+    }
+    //                   var nodes = document.getElementById("div2").getElementsByTagName('*');
+    // for(var i = 0; i < nodes.length; i++){
+    //      nodes[i].disabled = true;
+    // }
+    //                   var nodes = document.getElementById("div1").getElementsByTagName('*');
+    // for(var i = 0; i < nodes.length; i++){
+    //      nodes[i].disabled = false;
+    //}
+    // $('#div2').fadeTo('slow',.6);
+    // $('#div2').append('<div style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
+    //                 }
+    function show2() {
+      document.getElementById('div2').style.display = "block";
+      document.getElementById('div2').classList.add("visible");
+      document.getElementById('div1').style.display = "none";
+      document.getElementById('div1').classList.remove("visible");
+    }
+// //                    var nodes = document.getElementById("div1").getElementsByTagName('*');
+// // for(var i = 0; i < nodes.length; i++){
+// //      nodes[i].disabled = true;
+// // }
+// // var nodes = document.getElementById("div2").getElementsByTagName('*');
+// // for(var i = 0; i < nodes.length; i++){
+// //      nodes[i].disabled = false;
+// // }
+// $('#div1').fadeTo('slow',.6);
+// $('#div1').append('<div style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
+      // function loading(){
+      //   document.getElementById("content").classList.add("inactive");
+      //   document.getElementById("loader").style.display = "flex";
+      //    document.getElementById("loader").style.justify-content = "center";
+      //     document.getElementById("loader").style.align-items = "center";
+      // }         
+
+  </script>
+  <title>SRC ANALYSIS - BSC COMPUTER SCIENCE FINAL YEAR PROJECT</title>
+</head>
+
+<body>
+  <div class="header" id="topheader">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container text-uppercase p-2">
+        <a class="navbar-brand font-weight-bold text-white" href="#">
+          <div class="navi-bar">
+            <h4 onclick="window.open( 'index', '_self' );">SRC ANALYSIS </h4>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/docs">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Prediction<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/plots">Plots</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <section class="header-section">
+      <div class="center-div">
+        <h1 class="ml11 font-weight-bold">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">For a Breath of Fresh Air</span>
+          </span>
+        </h1>
+        <p class="desc">
+          We analyze and predict the ambient air quality standards with the help of AQI using machine learning
+          algorithms.
+        </p>
+        <div class="social-link">
+          <a href="#" target="_/"><i class="fa-3x fa fa-facebook-official customize" aria-hidden="true"></i></a>
+          <a href="https://github.com/Reshav-Paul/Air-Quality-Prediction" target="_/"><i
+              class="fa-3x fa fa-github-square customize" aria-hidden="true"></i></a>
+          <a href="#" target="_/"><i class="fa-3x fa fa-twitter-square customize" aria-hidden="true"></i></a>
+          <a href="#" target="_/"><i class="fa-3x fa fa-instagram customize" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- *******************************Three extra div starts********************************** -->
+
+  <section class="header-extradiv">
+    <div class="container">
+      <div class="row">
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-desktop" aria-hidden="true"></i></a>
+          <h2>EASY TO PREDICT</h2>
+          <p style="text-align: center;">
+            Accurate prediction facilities from both supplied and automatically fetched data.
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-magic" aria-hidden="true"></i></a>
+          <h2>EASY TO EXPLORE</h2>
+          <p style="text-align: center;">
+            Easy navigation and wide range of availabilities with interactive experience
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-eye" aria-hidden="true"></i></a>
+          <h2>EASY TO VISUALISE</h2>
+          <p style="text-align: center;">
+            Attractive visualisation of ML performance with the help of different plots
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- *******************************Three extra div ends********************************** -->
+
+
+
+
+  <section class="header-extradiv" id="content">
+    <div class="container">
+
+      <h3>Give your choice : </h3>
+      <hr class="style-five">
+
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios"
+          onclick="show1();">
+        <label class="custom-control-label" for="defaultGroupExample1">
+          <h5>Predict and calculate based on scrapped data</h5>
+        </label>
+      </div>
+
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="groupOfDefaultRadios"
+          onclick="show2();">
+        <label class="custom-control-label" for="defaultGroupExample2">
+          <h5>Predict and calculate based on given data</h5>
+        </label>
+      </div>
+      <br>
+      <br>
+      <div id="preload"></div>
+      <div align="center-div" class=" extra-div hide" id="div1">
+        <form action="/result1" method="get">
+          <div align="center-div">
+            <h4>
+              Prediction of Air Quality Parameters and calculation of AQI based on scrapped meteorological data.
+              <hr class="style-seven">
+            </h4>
+          </div>
+          <br>
+          <div class="form-group">
+            Date :&nbsp;&nbsp;<input type="text" class="my_date_picker" name="date" placeholder="dd.mm.yyyy"
+              required="required">
+
+            <script>
+              $(".my_date_picker").datepicker({
+                dateFormat: 'dd.mm.yy',
+                defaultDate: "24.09.2019"
+              });  
+            </script>
+          </div>
+          <hr class="style-five">
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch1" name="check1">
+            <label for="customSwitch1">&nbsp;&nbsp;Multilinear Regression</label>
+          </div>
+          <br>
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch2" name="check2">
+            <label for="customSwitch2">&nbsp;&nbsp;SupportVector Regression</label>
+          </div>
+          <br>
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch3" name="check3">
+            <label for="customSwitch3"> &nbsp;&nbsp;Random Forest</label>
+          </div>
+          <br>
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch6" name="check6">
+            <label for="customSwitch6">&nbsp;&nbsp; Long Short-Term Memory</label>
+          </div>
+          <br>
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch4" name="check4">
+            <label for="customSwitch4"> &nbsp;&nbsp;Polynomial Regression</label>
+          </div>
+          <br>
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch5" name="check5">
+            <label for="customSwitch5">&nbsp;&nbsp; Multilayer Perceptron Network</label>
+
+          </div>
+          <br>
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch7" name="check7">
+            <label for="customSwitch7">&nbsp;&nbsp;Gated Recurrent Unit</label>
+
+          </div>
+          <br>
+          <br>
+          <div align="left">
+            <input type="checkbox" id="customSwitch8" name="check8">
+            <label for="customSwitch8">&nbsp;&nbsp;Wide Deep Network</label>
+          </div>
+          <br>
+          <br>
+          <div align="center-div">
+            <button type="submit" class="btn btn-dark" id="p2" onclick="loading();">Predict</button>
+          </div>
+
+        </form>
+      </div>
+
+
+      <div class=" extra-div hide" id="div2">
+        <form action="/result3" method="get">
+          <div align="center-div">
+            <h4>
+              Prediction of Air Quality Parameters and calculation of AQI based on given meteorological data.
+
+
+            </h4>
+          </div>
+
+          <hr class="style-seven">
+          <br>
+          <div class="form-group">
+            Date :&nbsp;&nbsp; <input type="text" class="my_date_picker" name="date" placeholder="dd.mm.yyyy"
+              required="required">
+
+            <script>
+              $(".my_date_picker").datepicker({
+                dateFormat: 'dd.mm.yy',
+                defaultDate: "24.09.2019"
+              });  
+            </script>
+          </div>
+          <hr class="style-five">
+          <br>
+          <div class="form-group" align="left">
+            Air Temperature :&nbsp;&nbsp; <input type="text" name="atemp" required="required">
+
+          </div>
+
+          <hr class="style-five">
+
+          <div class="form-group" align="left">
+            Pressure Station Level:&nbsp;&nbsp; <input type="text" name="pslev" required="required">
+          </div>
+
+          <hr class="style-five">
+
+          <div class="form-group" align="left">
+            Relative Humidity:&nbsp;&nbsp; <input type="text" name="rhum" required="required">
+          </div>
+
+          <hr class="style-five">
+
+          <div class="form-group" align="left">
+            Horizontal Visibility:&nbsp;&nbsp; <input type="text" name="hvis" required="required">
+          </div>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            Dew Point Temperature:&nbsp;&nbsp; <input type="text" name="dtemp" required="required">
+          </div>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            Wind Speed:&nbsp;&nbsp; <input type="text" name="wspeed" required="required">
+          </div>
+          <hr class="style-five">
+          <h6>
+            Previous day's values :
+          </h6>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            PM10: &nbsp;&nbsp;<input type="text" name="pmlast" required="required">
+          </div>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            NO2:&nbsp;&nbsp; <input type="text" name="nolast" required="required">
+          </div>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            SO2:&nbsp;&nbsp; <input type="text" name="solast" required="required">
+          </div>
+          <hr class="style-five">
+          <h6>
+            Day before previous day's values :
+          </h6>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            PM10:&nbsp;&nbsp; <input type="text" name="pmprevlast" required="required">
+          </div>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            NO2:&nbsp;&nbsp; <input type="text" name="noprevlast" required="required">
+          </div>
+          <hr class="style-five">
+          <div class="form-group" align="left">
+            SO2:&nbsp;&nbsp; <input type="text" name="soprevlast" required="required">
+          </div>
+          <hr class="style-five">
+          <br>
+          <div align="center-div">
+            <button type="submit" class="btn btn-dark" id="p1" onclick="loading();">Predict</button>
+          </div>
+        </form>
+      </div>
+      <!-- <div id="loader">
+         <img src="./static/images/loader2.gif" >
+        </div>  -->
+
+
+      <!-- <div class="row">
+      <div class=" extra-div col-lg-6 col-md-12 hide" id="div1">
+        <form action = "/result1" method = "get">
+          <div align = "center-div">
+            <h4>
+              Prediction of Air Quality Parameters and calculation of AQI based on scrapped meteorological data. 
+              <hr class = "style-seven">
+            </h4>
+          </div>
+          <br>
+        <div class="form-group">
+            Date : <input type="text" class="my_date_picker" name = "date"> 
+   
+    <script> 
+                $(".my_date_picker").datepicker({ 
+        dateFormat: 'dd.mm.yy', 
+        defaultDate:"24.09.2019"
+    });  
+    </script> 
+          </div>
+              <hr class = "style-five">
+              <br>
+              <div align="left">
+                <input type="checkbox" id="customSwitch1" name = "check1">
+                <label  for="customSwitch1">Multilinear Regression</label>
+              </div>
+              <br>
+              <br>
+              <div align="left">
+                <input type="checkbox"  id="customSwitch2" name = "check2">
+                <label for="customSwitch2">SupportVector Regression</label>
+              </div>
+              <br>
+              <br>
+            <div align="left">
+              <input type="checkbox"  id="customSwitch3" name = "check3">
+              <label  for="customSwitch3"> Random Forest</label>
+            </div>   
+            <br>  
+            <br>   
+                <div align="left">
+                  <input type="checkbox"  id="customSwitch6" name = "check6">
+                  <label  for="customSwitch6"> Long Short-Term Memory</label>
+                </div>
+                <br>
+                <br> 
+                 <div align="left">
+                   <input type="checkbox"  id="customSwitch4" name = "check4">
+                   <label  for="customSwitch4"> Polynomial Regression</label>  
+                 </div> 
+                 <br>
+                 <br>  
+                   <div align="left">
+                     <input type="checkbox"  id="customSwitch5" name = "check5">
+                     <label  for="customSwitch5"> Multilinear Perceptron Network</label>
+
+                   </div> 
+                  <br>
+                  <br>
+                  <div align="left">
+                    <input type="checkbox"  id="customSwitch7" name = "check7">
+                    <label  for="customSwitch7">Gated Recurrent Unit</label>
+                    
+                  </div>
+                    <br>
+                    <br>
+                  <div align="left">
+                    <input type="checkbox"  id="customSwitch8" name = "check8">
+                    <label  for="customSwitch8">Wide Deep Network</label>
+                  </div>
+                  <br>
+                  <br>
+                <div align="center-div">
+                  <button type="submit" class="btn btn-dark">Predict</button> 
+                </div>
+                   
+          </form>
+        </div>
+
+          <div class=" extra-div col-lg-6 col-md-12 hide" id="div2">
+            <form action = "/result3" method = "get">
+              <div align = "center-div">
+                <h4>
+                  Prediction of Air Quality Parameters and calculation of AQI based on given meteorological data.
+                  
+                  
+                </h4>
+              </div>
+              
+              <hr class = "style-seven">
+              <br>
+            <div class="form-group">
+                Date : <input type="text" class="my_date_picker" name = "date"> 
+        
+        <script> 
+                    $(".my_date_picker").datepicker({ 
+            dateFormat: 'dd.mm.yy', 
+            defaultDate:"24.09.2019"
+        });  
+        </script> 
+              </div>
+                  <hr class = "style-five">
+                  <br>
+                  <div class="form-group" align="left">
+                    Air Temperature : <input type="text" name="atemp">
+
+                  </div>
+                  
+                  <hr class = "style-five">
+          
+                  <div class="form-group" align="left">
+                    Pressure Station Level: <input type="text" name="pslev">
+                  </div>
+                  
+                  <hr class = "style-five">
+                  
+                  <div class="form-group" align="left">
+                    Relative Humidity: <input type="text" name="rhum">
+                  </div> 
+                  
+                  <hr class = "style-five">
+                  
+                  <div class="form-group" align="left">
+                   Horizontal Visibility: <input type="text" name="hvis">
+                  </div> 
+                  <hr class = "style-five">
+                  <div class="form-group" align="left">
+                    Dew Point Temperature: <input type="text" name="dtemp">
+                  </div> 
+<hr class = "style-five">
+                  <div class="form-group" align="left">
+                   Wind Speed: <input type="text" name="wspeed">
+                  </div> 
+                  <hr class = "style-five">
+                  <h6>
+                    Previous day's values :
+                  </h6>
+                  <hr class = "style-five">
+                  <div class="form-group" align="left">
+                   PM10: <input type="text" name="pmlast">
+                  </div> 
+                  <hr class = "style-five">
+                  <div class="form-group" align="left">
+                    NO2: <input type="text" name="nolast">
+                  </div> 
+<hr class = "style-five">
+                  <div class="form-group" align="left">
+                   SO2: <input type="text" name="solast">
+                  </div> 
+                  <hr class = "style-five">
+                  <h6>
+                    Day before previous day's values :
+                  </h6>
+                  <hr class = "style-five">
+                  <div class="form-group" align="left">
+                   PM10: <input type="text" name="pmprevlast">
+                  </div> 
+                  <hr class = "style-five">
+                  <div class="form-group" align="left">
+                    NO2: <input type="text" name="noprevlast">
+                  </div> 
+<hr class = "style-five">
+                  <div class="form-group" align="left">
+                   SO2: <input type="text" name="soprevlast">
+                  </div> 
+                  <hr class = "style-five">
+                  <br>
+                  <div align="center-div">
+                    <button type="submit" class="btn btn-dark">Predict</button> 
+                  </div>
+              </form>
+            </div>
+    </div>
+ -->
+    </div>
+  </section>
+  <div class="container" style="width: 600px;">
+    <div class="extra-div">
+      <form action="/result2" method="get">
+        <div align="center-div" style="text-align: center;">
+          <h4>
+            Calculation of AQI based on given Air Quality Parameters
+            <br>
+
+          </h4>
+        </div>
+        <br>
+        <hr class="style-seven">
+        <br>
+        <div class="form-group">
+          Date : &nbsp;&nbsp;<input type="text" class="my_date_picker" name="date">
+
+          <script>
+            $(".my_date_picker").datepicker({
+              dateFormat: 'dd.mm.yy',
+              defaultDate: "24.09.2019"
+            });  
+          </script>
+        </div>
+        <hr class="style-five">
+        <br>
+        <div class="form-group">
+          PM10 :&nbsp;&nbsp; <input type="text" name="pm10">
+        </div>
+        <br>
+        <hr class="style-five">
+        <br>
+        <br>
+        <div class="form-group">
+          NO2 :&nbsp;&nbsp; <input type="text" name="no2">
+        </div>
+        <br>
+        <hr class="style-five">
+        <br>
+        <br>
+        <div class="form-group">
+          SO2 : &nbsp;&nbsp;<input type="text" name="so2">
+        </div>
+        <br>
+        <hr class="style-five">
+        <br>
+        <br>
+        <div align="center-div" style="padding-left: 180px;">
+          <button type="submit" class="btn btn-dark">Calculate</button>
+        </div>
+      </form>
+    </div>
+    <br>
+    <br>
+  </div>
+
+  <!-- Footer -->
+
+  <footer class="bg-dark text-white">
+    <div class="container-fluid p-4">
+      <div class="row">
+        <div class="col-lg-3 pb-2">
+          <h4>
+            About Us
+          </h4>
+          <p>
+            We are CS UG Students <br> from St. Xavier's College, Kolkata.
+          </p>
+        </div>
+        <div class="col-lg-3 pb-2">
+          <h4>
+            Important links
+          </h4>
+          <ul class="list-unstyled">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/prediction">Prediction</a></li>
+            <li><a href="/plots">Plots</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 pb-2">
+          <h4>Contact Us</h4>
+          <p>
+            <address>
+              St. Xavier's College, 30, Mother Teresa Sarani, Kolkata, PO: Park Street.
+            </address>
+            <strong>Email : </strong><a href="mailto:swapnomoy199916@gmail.com">swapnomoy199916@gmail.com</a>
+          </p>
+        </div>
+        <div class="col-lg-3 pb-2 ">
+          <h4>
+            Information Updates
+          </h4>
+          <p>
+            Enter your email address below :
+          </p>
+          <form action="">
+            <div class="input-group">
+              <input type="email" name="" id="" class="form-control">
+              <div class="input-group-append">
+                <button class="btn btn-secondary">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center bg-secondary py-2">
+      &copy; 2020. All rights are reserved.
+    </div>
+  </footer>
+
+  <!-- Footer ends -->
+
+  <script type="text/javascript">
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml11 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700
+      })
+      .add({
+        targets: '.ml11 .line',
+        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+        easing: "easeOutExpo",
+        duration: 700,
+        delay: 100
+      }).add({
+        targets: '.ml11 .letter',
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=775',
+        delay: (el, i) => 34 * (i + 1)
+      }).add({
+        targets: '.ml11',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+*{
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+
+p{
+	font-size: 0.9rem;
+	line-height: 1.6;
+	font-weight: 500;
+	color: #404040;
+}
+
+.extra-div h2{
+	font-size: 0.9rem;
+	margin: 20px 0 15px 0;
+	font-weight: bold;
+	line-height: 1.1;
+	word-spacing: 4px;
+}
+.header{
+	width: 100%;
+	height: 100vh;
+	background-image:linear-gradient(rgba(5, 41, 59, 0.3), rgba(5, 41, 59,0.3)), url('../images/cover5.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0 75%, 0 0);
+	position: relative;
+}
+.header:before{
+	content: "";
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	left: 0;
+	right: 0;
+	opacity: 0.1;
+	z-index: -1;
+	background: linear-gradient(to right, #10181a 0%, #0c1f24 0%, #063c4a 100%);
+}
+
+ .navbar:before{
+ 	content: "";
+ 	position: absolute;
+ 	top: 0%;
+ 	bottom: 0%;
+ 	left: 0;
+ 	right: 0;
+ 	opacity: 0.1;
+ 	z-index: -1;
+ 	background: linear-gradient(to right, #10181a 0%, #0c1f24 0%, #063c4a 100%);
+ }
+ .nav-item a{
+ 	color: #fff!important;
+ 	font-weight: bold;
+ }
+ .header-section{
+ 	width: 100%;
+ 	height: inherit;
+ 	color: white;
+ 	text-align: center;
+ 	position: relative;
+ }
+ .center-div{
+ 	width: 100%;
+ 	height: auto;
+ 	position: absolute;
+ 	top: 50%;
+ 	left: 50%;
+ 	transform: translate(-50%, -50%);
+ 	-ms-transform: translate(-50%, -50%);
+ 	-webkit-transform: translate(-50%, -50%);
+ }
+ .header-buttons a{
+ 	border: 1px solid #fff;
+ 	border-radius: 100px;
+ 	margin: 0 5px;
+ 	padding: 12px 35px;
+ 	outline: none;
+ 	color: #fff;
+ 	font-size: 1rem;
+ 	font-weight: 400;
+ 	line-height: 1.4;
+ 	text-align: center;
+ }
+ .header-buttons a:hover{
+ 	color: #50d1c0;
+ 	background: #fff;
+ 	text-decoration: none;
+ 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+ }
+ .center-div p{
+ 	font-size: 1.3rem;
+ 	padding: 10px 0 20px 0;
+ 	color: white;
+ }
+ .header-extradiv{
+ 	width: 100%;
+ 	height: auto;
+ 	margin: 100px 0;
+ 	text-align: center;
+ }
+ .extra-div{
+ 	background: #fff;
+ 	border: medium none;
+ 	padding: 50px!important;
+ 	border-radius: 3px;
+ 	transition: 0.3s;
+  
+ }
+ .extra-div:hover{
+ 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+ 	transform: translateY(-20px);
+
+ }
+ td{
+ 	text-align: center;
+ 	vertical-align: middle;
+ }
+
+ /*.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+/*.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+*/
+/* The slider */
+/*.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}*/
+
+/*.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+/*.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}*/
+
+
+input[type="checkbox"]{
+    position: relative;
+    width: 34px;
+    height: 17px;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.2);
+    transition: .5s;
+}
+input:checked[type="checkbox"]
+{
+  background: #03a9f4;
+}
+input[type="checkbox"]:before
+{
+  content: '';
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: .5s;
+}
+input:checked[type="checkbox"]:before
+{
+  left: 17px;
+}
+/**{
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+
+p{
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #404040;
+}
+
+.extra-div h2{
+  font-size: 0.9rem;
+  margin: 20px 0 15px 0;
+  font-weight: bold;
+  line-height: 1.1;
+  word-spacing: 4px;
+}
+.header{
+  width: 100%;
+  height: 100vh;
+  background-image:linear-gradient(rgba(5, 41, 59, 0.3), rgba(5, 41, 59,0.3)), url('../images/cover4.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  clip-path: polygon(100% 0%, 100% 77%, 50% 100%, 0 75%, 0 0);
+  position: relative;
+}
+.header:before{
+  content: "";
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  opacity: 0.1;
+  z-index: -1;
+  background: linear-gradient(to right, #10181a 0%, #0c1f24 0%, #063c4a 100%);
+}
+
+ .navbar:before{
+  content: "";
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  opacity: 0.1;
+  z-index: -1;
+  background: linear-gradient(to right, #10181a 0%, #0c1f24 0%, #063c4a 100%);
+ }
+ .nav-item a{
+  color: #fff!important;
+  font-weight: bold;
+ }
+ .header-section{
+  width: 100%;
+  height: inherit;
+  color: white;
+  text-align: center;
+  position: relative;
+ }
+ .center-div{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+ }
+ .header-buttons a{
+  border: 1px solid #fff;
+  border-radius: 100px;
+  margin: 0 5px;
+  padding: 12px 35px;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+ }
+ .header-buttons a:hover{
+  color: #50d1c0;
+  background: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+ }
+ .center-div p{
+  font-size: 1.3rem;
+  padding: 10px 0 20px 0;
+  color: white;
+ }
+ .header-extradiv{
+  width: 100%;
+  height: auto;
+  margin: 100px 0;
+  text-align: center;
+ }
+ .extra-div{
+  background: #fff;
+  border: medium none;
+  padding: 50px!important;
+  border-radius: 3px;
+  transition: 0.3s;
+  position: relative;
+ }
+ .extra-div:hover{
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-20px);
+
+ }*/

@@ -1,0 +1,370 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"
+    integrity="sha256-eBPyH/yKtanEgIozyunmI0tKs7FCRaiQC91ih5ZCB3w=" crossorigin="anonymous"></script>
+  <style type="text/css">
+    footer a {
+      color: #fff;
+    }
+
+    footer a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer p {
+      color: #fff;
+    }
+
+    .ml11 {
+      font-weight: 500;
+      font-size: 2.5em;
+    }
+
+    .ml11 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.1em;
+      padding-right: 0.05em;
+      padding-bottom: 0.15em;
+    }
+
+    .ml11 .line {
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: #fff;
+      transform-origin: 0 50%;
+    }
+
+    .ml11 .line1 {
+      top: 0;
+      left: 0;
+    }
+
+    .ml11 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+
+    .customize {
+      color: white;
+      padding: 10px;
+    }
+
+    .social-link a i {
+      transition: 0.8s;
+    }
+
+    .social-link a i:hover {
+      transform: rotateY(360deg);
+
+    }
+
+    .navbar-toggler {
+      background-color: rgba(238, 241, 242, 0.819607843137);
+      border: 1px solid transparent !important;
+      border-radius: .25rem !important;
+    }
+
+    img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 20px 0 rgba(37, 43, 54, 0.6);
+      height: 70px;
+      border-radius: 50%;
+      transition: 0.8s;
+      margin-bottom: 3px;
+    }
+
+    img:hover {
+      transform: rotateY(360deg);
+    }
+
+    .navi-bar h4 {
+      letter-spacing: 0.2rem;
+      margin-top: 5px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+
+    }
+
+
+    .desc {
+      font-family: "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+      font-weight: bold;
+    }
+
+    /*.loading {
+            height: 0;
+            width: 0;
+            padding: 15px;
+            border: 6px solid #ccc;
+            border-right-color: #888;
+            border-radius: 22px;
+            -webkit-animation: rotate 1s infinite linear;
+            /* left, top and position just for the demo! */
+    /*position: absolute;
+            left: 50%;
+            top: 50%;
+          }*/
+
+    /* @-webkit-keyframes rotate {
+             100% keyframe for  clockwise. 
+               use 0% instead for anticlockwise 
+            100% {
+              -webkit-transform: rotate(360deg);
+            }*/
+    /*}*/
+  </style>
+  <script>
+          //  document.querySelector("body").addEventListener('load', fadeOutEffect);
+          // function fadeOutEffect() {
+          //     var fadeTarget = document.querySelector(".loading");
+          //     var fadeEffect = setInterval(function () {
+          //         if (!fadeTarget.style.opacity) {
+          //             fadeTarget.style.opacity = 1;
+          //         }
+          //         if (fadeTarget.style.opacity > 0) {
+          //             fadeTarget.style.opacity -= 0.1;
+          //         } else {
+          //             clearInterval(fadeEffect);
+          //         }
+          //     }, 200);
+          // }
+
+// var preloader = document.getElementById('loading');
+// function myfunc(){
+
+// }
+
+  </script>
+  <title>SRC ANALYSIS - BSC COMPUTER SCIENCE FINAL YEAR PROJECT</title>
+</head>
+
+<body>
+
+
+  <div class="header" id="topheader">
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="container text-uppercase p-2">
+        <a class="navbar-brand font-weight-bold text-white" href="#">
+          <div class="navi-bar">
+            <!-- <div class="logo-img"><img src="./static/images/logo3.png"></div> -->
+            <h4 onclick="window.open( '', '_self' );">SRC ANALYSIS </h4>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item active">
+              <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/docs">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/prediction">Prediction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/plots">Plots</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <section class="header-section">
+      <div class="center-div">
+        <h1 class="ml11 font-weight-bold">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">For a Breath of Fresh Air</span>
+          </span>
+        </h1>
+        <p class="desc">
+          We analyze and predict the ambient air quality standards with the help of AQI using machine learning
+          algorithms.
+        </p>
+        <div class="social-link">
+          <a href="#" target="_/"><i class="fa-3x fa fa-facebook-official customize" aria-hidden="true"></i></a>
+          <a href="https://github.com/Reshav-Paul/Air-Quality-Prediction" target="_/"><i
+              class="fa-3x fa fa-github-square customize" aria-hidden="true"></i></a>
+          <a href="#" target="_/"><i class="fa-3x fa fa-twitter-square customize" aria-hidden="true"></i></a>
+          <a href="#" target="_/"><i class="fa-3x fa fa-instagram customize" aria-hidden="true"></i></a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- *******************************Three extra div starts********************************** -->
+
+  <section class="header-extradiv">
+    <div class="container">
+      <div class="row">
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-desktop" aria-hidden="true"></i></a>
+          <h2>EASY TO PREDICT</h2>
+          <p style="text-align: center;">
+            Accurate prediction facilities from both supplied and automatically fetched data.
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-magic" aria-hidden="true"></i></a>
+          <h2>EASY TO EXPLORE</h2>
+          <p style="text-align: center;">
+            Easy navigation and wide range of availabilities with interactive experience
+          </p>
+        </div>
+
+        <div class=" extra-div col-lg-4 col-md-4 col-12">
+          <a href="#"><i class="fa-3x fa fa-eye" aria-hidden="true"></i></a>
+          <h2>EASY TO VISUALISE</h2>
+          <p style="text-align: center;">
+            Attractive visualisation of ML performance with the help of different plots
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- *******************************Three extra div ends********************************** -->
+
+
+
+  <!-- Footer -->
+
+  <footer class="bg-dark text-white">
+    <div class="container-fluid p-4">
+      <div class="row">
+        <div class="col-lg-3 pb-2">
+          <h4>
+            About Us
+          </h4>
+          <p>
+            We are CS UG Students <br> from St. Xavier's College, Kolkata.
+          </p>
+        </div>
+        <div class="col-lg-3 pb-2">
+          <h4>
+            Important links
+          </h4>
+          <ul class="list-unstyled">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/prediction">Prediction</a></li>
+            <li><a href="/plots">Plots</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 pb-2">
+          <h4>Contact Us</h4>
+          <p>
+            <address>
+              St. Xavier's College, 30, Mother Teresa Sarani, Kolkata, PO: Park Street.
+            </address>
+            <strong>Email : </strong><a href="mailto:swapnomoy199916@gmail.com">swapnomoy199916@gmail.com</a>
+          </p>
+        </div>
+        <div class="col-lg-3 pb-2 ">
+          <h4>
+            Information Updates
+          </h4>
+          <p>
+            Enter your email address below :
+          </p>
+          <form action="">
+            <div class="input-group">
+              <input type="email" name="" id="" class="form-control">
+              <div class="input-group-append">
+                <button class="btn btn-secondary">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-center bg-secondary py-2">
+      &copy; 2020. All rights are reserved.
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml11 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({ loop: true })
+      .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700
+      })
+      .add({
+        targets: '.ml11 .line',
+        translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+        easing: "easeOutExpo",
+        duration: 700,
+        delay: 100
+      }).add({
+        targets: '.ml11 .letter',
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=775',
+        delay: (el, i) => 34 * (i + 1)
+      }).add({
+        targets: '.ml11',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+
+  <!-- Footer ends -->
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    hr.style-five {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    .customize-1 {
+      font-size: 20px;
+      letter-spacing: 0.2rem;
+      font-family: sans-serif;
+
+    }
+
+    ul.nav-pills {
+      top: 20px;
+
+    }
+
+    div.col-sm-9 div {
+
+      font-size: 28px;
+    }
+
+    #div1 {
+      display: block;
+    }
+
+    #div2,
+    #div3,
+    #div4,
+    #div5 {
+      display: none;
+    }
+
+    body {
+      font-family: serif;
+    }
+
+    .list-group-item.active {
+      z-index: 2;
+      color: #000;
+      background-color: #fff;
+      border-color: #ccc;
+    }
+  </style>
+  <script>
+    function show1() {
+      document.getElementById('div2').style.display = "none";
+      document.getElementById('div3').style.display = "none";
+      document.getElementById('div4').style.display = "none";
+      document.getElementById('div5').style.display = "none";
+      document.getElementById('div1').style.display = "block";
+    }
+    function show2() {
+      document.getElementById('div2').style.display = "block";
+      document.getElementById('div3').style.display = "none";
+      document.getElementById('div4').style.display = "none";
+      document.getElementById('div5').style.display = "none";
+      document.getElementById('div1').style.display = "none";
+    }
+    function show3() {
+      document.getElementById('div2').style.display = "none";
+      document.getElementById('div3').style.display = "block";
+      document.getElementById('div4').style.display = "none";
+      document.getElementById('div5').style.display = "none";
+      document.getElementById('div1').style.display = "none";
+    }
+    function show4() {
+      document.getElementById('div2').style.display = "none";
+      document.getElementById('div3').style.display = "none";
+      document.getElementById('div4').style.display = "block";
+      document.getElementById('div5').style.display = "none";
+      document.getElementById('div1').style.display = "none";
+    }
+    function show5() {
+      document.getElementById('div2').style.display = "none";
+      document.getElementById('div3').style.display = "none";
+      document.getElementById('div4').style.display = "none";
+      document.getElementById('div5').style.display = "block";
+      document.getElementById('div1').style.display = "none";
+    }
+  </script>
+  <title>SRC ANALYSIS - BSC COMPUTER SCIENCE FINAL YEAR PROJECT</title>
+</head>
+
+<body>
+
+  <div class="jumbotron jumbotron-fluid  mt-1">
+    <div class="container">
+      <h1 class="display-4 ">Prediction date : {{date}}</h1>
+      <hr class="style-five">
+      <p class="customize-1">The model you have chosen is : {{model}}</p>
+    </div>
+  </div>
+  <div class="alert alert-{{level}}" role="alert">
+    <div class="container">
+      AQI CATEGORY : {{msg}}
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div id="list-example" class="list-group">
+          <a class="list-group-item list-group-item-action" href="#list-item-1" onclick="show1();">PM10</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-2" onclick="show2();">NO2</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-3" onclick="show3();">SO2</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-4" onclick="show4();">AQI</a>
+          <a class="list-group-item list-group-item-action" href="#list-item-5" onclick="show5();">ADVISORY</a>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div data-spy="scroll" data-target="#list-example" class="scrollspy-example">
+          <div id="div1">
+            <h4 id="list-item-1">PM10 value : </h4>
+            <p>{{pm10}}</p>
+          </div>
+          <div id="div2">
+            <h4 id="list-item-2">NO2 value : </h4>
+            <p>{{no2}}</p>
+          </div>
+          <div id="div3">
+            <h4 id="list-item-3">SO2 value : </h4>
+            <p>{{so2}}</p>
+          </div>
+          <div id="div4">
+            <h4 id="list-item-4">AQI value : </h4>
+            <p>{{aqi}}</p>
+          </div>
+          <div id="div5">
+            <h4 id="list-item-5">Impact on health : </h4>
+            <p>{{advisory}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
