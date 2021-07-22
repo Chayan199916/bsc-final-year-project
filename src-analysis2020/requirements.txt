@@ -62,7 +62,7 @@ pycparser==2.20
 Pygments==2.9.0
 PyJWT==1.7.1
 pyOpenSSL==19.1.0
-pyparsing==2.4.6
+pyparsing==2.4.7
 pyreadline==2.1
 pyrsistent==0.15.7
 PySocks==1.7.1
